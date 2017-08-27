@@ -16,7 +16,7 @@ namespace Ky.OAuth2
     {
         static string GoogleClientId = ConfigurationManager.AppSettings["GoogleClientId"];
         static string GoogleClientSecret = ConfigurationManager.AppSettings["GoogleClientSecret"];
-        static string GoogleCallbackUrl = ConfigurationManager.AppSettings["GoogleCallbackUrl"];
+        static string GoogleCallbackUrl = ConfigurationManager.AppSettings["GoogleCallbackUrl"] ?? "/oauth2callback";
 
         static string GetRedirectUri
         {
@@ -31,9 +31,10 @@ namespace Ky.OAuth2
             }
         }
 
-        static public string GetOAuthUrl()
+        static public string GetOAuthUrl(string state = null)
         {
-            return $"https://accounts.google.com/o/oauth2/auth?response_type=code&client_id={GoogleClientId}&redirect_uri={GetRedirectUri}&scope=https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email";
+            return $"https://accounts.google.com/o/oauth2/auth?response_type=code&client_id={GoogleClientId}&redirect_uri={GetRedirectUri}&scope=https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email" +
+                (state != null ? "&state=" + HttpUtility.UrlEncode(state) : null);
         }
 
         static public ProfileInfo GetUserProfile(string authCode)

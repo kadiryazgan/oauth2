@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>KY.OAuth2</id>
+    <version>0.1.3</version>
+    <title>KY OAuth2 Helpers</title>
+    <authors>Kadir Yazgan</authors>
+    <owners>Kadir Yazgan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simplest possible oauth2 implementation for google. Define GoogleClientId, GoogleClientSecret and GoogleCallbackUrl in appsettings.</description>
+    <releaseNotes>Added state parameter.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>ky oauth2</tags>
+  </metadata>
+</package>
