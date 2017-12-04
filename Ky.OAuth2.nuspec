@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>KY.OAuth2</id>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
     <title>KY OAuth2 Helpers</title>
     <authors>Kadir Yazgan</authors>
     <owners>Kadir Yazgan</owners>
